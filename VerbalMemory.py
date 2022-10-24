@@ -72,6 +72,3 @@ class VerbalMemory(Game.Game):
             print(bcolors.OKGREEN + "You had " + str(self._score) + " points" + bcolors.ENDC)
                 
             
-VM = VerbalMemory()
-VM.Play()
-VM.GetScore()

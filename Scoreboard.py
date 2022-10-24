@@ -1,9 +1,14 @@
 class Scoreboard:
-    def __init__(self, filename):
-        self.__filename = filename
+    def __init__(self):
+        self.__filename = ""
         self.__scoreboard = {}
-        self.Read()
         
+    
+    def SetFileName(self, filename):
+        self.__filename = filename
+        self.__scoreboard.clear()
+        self.Read()
+
     def GetScoreboard(self):
         return self.__scoreboard 
 
@@ -30,10 +35,3 @@ class Scoreboard:
         for key in self.__scoreboard:
             file.write(key + " " + str(self.__scoreboard[key]) + " ")
         file.close()
-
-S = Scoreboard("number")
-S.Print()
-S.AddScore("name001", 20.0)
-S.AddScore("name002", 21.0)
-S.Print()
-S.SaveToFile()

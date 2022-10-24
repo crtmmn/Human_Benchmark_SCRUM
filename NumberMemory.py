@@ -80,6 +80,4 @@ class NumberMemory(Game.Game):
                 
                 print("")
                 break
-            
-NM = NumberMemory()
-NM.Play()
+        

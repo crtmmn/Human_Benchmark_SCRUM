@@ -22,8 +22,3 @@ class Histogram:
         for key in sorted(self.__scores):
             print(str(key) + ": ", end="")
             self.PrintStars(self.__scores[key])
-
-S = Scoreboard("number")
-
-H = Histogram(S)
-H.Print()

@@ -65,9 +65,6 @@ class ReactionTime(Game.Game):
             self._score += element
         self._average = self._score / int(self._attempts)
         self._score = round(self._average * 1000)
-        print(bcolors.OKGREEN + "Your average is: " + str(round(R._average * 1000)) + " ms" + bcolors.ENDC)
+        print(bcolors.OKGREEN + "Your average is: " + str(self._score) + " ms" + bcolors.ENDC)
         
             
-R = ReactionTime()
-R.Play()
-print(R.GetScore())
