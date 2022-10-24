@@ -18,7 +18,6 @@ class VerbalMemory(Game.Game):
         self._words =  ["idea", "fowl", "fact", "lift", "crate", "club", "reading", "limit", "shape", "border"]
         self._used_words = []
         self._lives = 3
-        self._points = 0
     def Play(self):
         clearConsole = lambda: os.system('cls' if os.name in ('nt', 'dos') else 'clear')
         clearConsole()
@@ -48,16 +47,16 @@ class VerbalMemory(Game.Game):
                     clearConsole()
                     print(bcolors.OKGREEN + "CORRECT!" + bcolors.ENDC)
                     self._used_words.append(random_choice)
-                    self._points += 1
-                    print(bcolors.OKGREEN+"Now you have " + str(self._points) + " points!"+bcolors.ENDC)
+                    self._score += 1
+                    print(bcolors.OKGREEN+"Now you have " + str(self._score) + " points!"+bcolors.ENDC)
             elif user_choice == "2":
                 
                 if random_choice in self._used_words:
                     clearConsole()
                     print(bcolors.OKGREEN + "CORRECT!" + bcolors.ENDC)
 
-                    self._points += 1
-                    print(bcolors.OKGREEN+"Now you have " + str(self._points) + " points!"+bcolors.ENDC)
+                    self._score += 1
+                    print(bcolors.OKGREEN+"Now you have " + str(self._score) + " points!"+bcolors.ENDC)
                 else:
                     clearConsole()
                     self._lives -= 1
@@ -70,8 +69,9 @@ class VerbalMemory(Game.Game):
         if self._lives == 0:
             clearConsole()
             print(bcolors.FAIL + "YOU LOSE" + bcolors.ENDC)
-            print(bcolors.OKGREEN + "You had " + str(self._points) + " points" + bcolors.ENDC)
+            print(bcolors.OKGREEN + "You had " + str(self._score) + " points" + bcolors.ENDC)
                 
             
 VM = VerbalMemory()
 VM.Play()
+VM.GetScore()

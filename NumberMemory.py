@@ -29,7 +29,6 @@ class NumberMemory(Game.Game):
         else:
             a = 1
             b = 10
-        score = 0
         while True:
             self._round += 1
             self._random_number = random.randint(a, b)
@@ -66,9 +65,9 @@ class NumberMemory(Game.Game):
                 print("")
                 print(bcolors.OKGREEN + "【﻿CORRECT】" + bcolors.ENDC)
 
-                score += 1
+                self._score += 1
                 print("")
-                print(bcolors.OKGREEN + "【﻿NUMBER   O F   POINTS: "  + "|" + str(score) + "|" + "】" + bcolors.ENDC)
+                print(bcolors.OKGREEN + "【﻿NUMBER   O F   POINTS: "  + "|" + str(self._score) + "|" + "】" + bcolors.ENDC)
 
                 print("")
             else:
@@ -76,7 +75,7 @@ class NumberMemory(Game.Game):
                 print(bcolors.FAIL + "【﻿INCORRECT】" + bcolors.ENDC)
 
                 print(bcolors.WARNING + "【﻿THE   NUMBR   WAS: " + "|" + str(self._random_number) + "|"  + "】" + bcolors.ENDC)
-                print(bcolors.WARNING + "【﻿YOU HAVE: " + "|" + str(score) + "|" + " POINTS " + "】" +  bcolors.ENDC)
+                print(bcolors.WARNING + "【﻿YOU HAVE: " + "|" + str(self._score) + "|" + " POINTS " + "】" +  bcolors.ENDC)
 
                 
                 print("")

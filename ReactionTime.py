@@ -61,15 +61,13 @@ class ReactionTime(Game.Game):
             print(bcolors.OKGREEN + rezzilt + bcolors.ENDC)
             i += 1
             
-        self._score = 0
         for element in self._scoreboard:
             self._score += element
         self._average = self._score / int(self._attempts)
-        
-    def GetScore(self):
+        self._score = round(self._average * 1000)
         print(bcolors.OKGREEN + "Your average is: " + str(round(R._average * 1000)) + " ms" + bcolors.ENDC)
-        quit()
+        
             
 R = ReactionTime()
 R.Play()
-R.GetScore()
+print(R.GetScore())
